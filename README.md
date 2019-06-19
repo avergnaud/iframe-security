@@ -90,6 +90,8 @@ domain-a/web/index.php
 
 # sous-domaine.domain-a proxy
 
+reverse proxy
+
 https://www.digitalocean.com/community/tutorials/how-to-use-apache-http-server-as-reverse-proxy-using-mod_proxy-extension
 
 https://perhonen.fr/blog/2015/05/un-reverse-proxy-apache-avec-mod_proxy-1713
@@ -111,3 +113,17 @@ https://www.tomred.net/devops/run-two-virtual-hosts-the-same-port.html
 (TODO)
 
 https://stackoverflow.com/questions/6425666/how-to-proxy-another-page-in-php
+
+# solution sans proxy
+
+Attention : le navigateur requêtera directement l'IP de domain-b. Donc en HTTPS il faudra importer un certificat de domain-a côté domain-b
+
+```
+<VirtualHost *:8091
+    ServerName sous-domaine.domain-a
+ 
+    ProxyPass / <<IP de domain-b>>
+    ProxyPassReverse / <<IP de domain-b>>
+    ProxyRequests Off
+</VirtualHost>
+```
