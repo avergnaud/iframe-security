@@ -18,7 +18,7 @@ Listen 8092
 ```
 <VirtualHost *:8091>
         #nom de domaine
-        ServerName domain-a 
+        ServerName domain-a  
         #on accepte aussi le www
         ServerAlias www.domain-a 
         #logs d'erreur
@@ -88,7 +88,25 @@ domain-a/web/index.php
 
 ![postMessage](solution-postMessage.png)
 
-# solution proxy
+# sous-domaine.domain-a proxy
+
+https://www.digitalocean.com/community/tutorials/how-to-use-apache-http-server-as-reverse-proxy-using-mod_proxy-extension
+
+https://perhonen.fr/blog/2015/05/un-reverse-proxy-apache-avec-mod_proxy-1713
+
+https://www.tomred.net/devops/run-two-virtual-hosts-the-same-port.html
+
+```
+<VirtualHost *:8091
+    ServerName sous-domaine.domain-a
+ 
+    ProxyPass / domain-b
+    ProxyPassReverse / domain-b
+    ProxyRequests Off
+</VirtualHost>
+```
+
+# solution proxy php (bof)
 
 (TODO)
 
