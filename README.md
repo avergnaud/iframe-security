@@ -83,7 +83,7 @@ someframe.setAttribute("src", contextRootUrl + "other-dist/someframe.html");
 
 on embarque le tout dans une première iframe...
 
-à tester
+![iframe_encore](solution_iframe.png)
 
 # solution postMessage
 
