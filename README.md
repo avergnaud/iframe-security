@@ -79,6 +79,12 @@ someframe.setAttribute("src", contextRootUrl + "other-dist/someframe.html");
 
 ![pb](pb-initial.png)
 
+# solution iframe !??
+
+on embarque le tout dans une première iframe...
+
+à tester
+
 # solution postMessage
 
 domain-a/web/index.php
