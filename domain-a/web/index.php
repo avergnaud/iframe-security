@@ -13,8 +13,12 @@ echo '<h1>index a</h1>';
         dans somelib.*.js :
         document.getElementById("some-button").addEventListener("click", clickHandler);
     -->
-    <button id="some-button">clic</button>
+
+    <!--
+        solution 3 "iframe supplémentaire"
+        <button id="some-button">clic</button>
+    -->
 </div>
-<script src="http://domain-b:8092/somelib.v2.js"></script>
+<script src="http://domain-b:8092/somelib.v3.js"></script>
  </body>
 </html>
